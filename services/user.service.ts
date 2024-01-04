@@ -18,8 +18,12 @@ export class UserService {
           }
         },
         description: true,
-        VirtualTour: true,
-        Tag: true,
+        VirtualTour: {
+          include: {
+            Tag: true
+          }
+        },
+        // Tag: true,
       }
     })
   }

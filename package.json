@@ -6,14 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@headlessui/react": "2.0.0-alpha.4",
     "@nextui-org/avatar": "^2.0.24",
     "@nextui-org/button": "2.0.26",
+    "@nextui-org/card": "^2.0.24",
+    "@nextui-org/chip": "^2.0.25",
+    "@nextui-org/image": "^2.0.24",
     "@nextui-org/link": "2.0.26",
     "@nextui-org/navbar": "2.0.27",
+    "@nextui-org/skeleton": "^2.0.24",
     "@nextui-org/snippet": "2.0.30",
     "@nextui-org/switch": "2.0.25",
     "@nextui-org/system": "2.0.15",
@@ -27,6 +32,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.16",
     "clsx": "^2.0.0",
+    "date-fns": "^3.0.6",
     "embla-carousel-auto-height": "8.0.0-rc18",
     "embla-carousel-autoplay": "8.0.0-rc18",
     "embla-carousel-react": "8.0.0-rc18",
@@ -37,6 +43,7 @@
     "postcss": "8.4.31",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "string-to-color": "^2.2.2",
     "tailwind-merge": "^2.2.0",
     "tailwind-variants": "^0.1.18"
   },
