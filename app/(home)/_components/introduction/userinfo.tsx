@@ -1,6 +1,7 @@
 import React from "react";
 import { Avatar as NextUiAvatar } from "@nextui-org/avatar";
 import { Text } from "@/components/ui-kit/text";
+import { Author } from "@/app/(home)/_components/userinfo/Author";
 
 type UserInfoProps = {
   avatar: string;
@@ -9,8 +10,9 @@ type UserInfoProps = {
 };
 export const UserInfo = ({ name, avatar, description }: UserInfoProps) => {
   return (
-    <div className="flex flex-col justify-center items-center mt-8">
-      <div>
+
+    <div className="flex-grow pr-6">
+      <div className="flex justify-center">
         <NextUiAvatar
           isBordered
           color="warning"
@@ -21,11 +23,12 @@ export const UserInfo = ({ name, avatar, description }: UserInfoProps) => {
         />
       </div>
       <div className="text-center mt-8">
-        <div className="text-lg font-semibold">
+        <div className="font-display text-2xl font-medium tracking-tight [text-wrap:balance] ">
           {name}
         </div>
-        <Text className="max-w-3xl px-6 text-left leading-7 [&:not(:first-child)]:mt-6">{description}</Text>
+        <Text className="max-w-3xl text-lg text-left [&:not(:first-child)]:mt-4">{description}</Text>
       </div>
     </div>
+    // <Author name={name} description={description} src={avatar} />
   );
 };

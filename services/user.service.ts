@@ -12,19 +12,19 @@ export class UserService {
       select: {
         name: true,
         image: true,
-        PageInfo: {
+        pageInfo: {
           select: {
-            Banner: true
+            banner: true
           }
         },
         description: true,
-        VirtualTour: {
+        virtualTours: {
           include: {
-            Tag: true
+            tags: true
           }
         },
         // Tag: true,
-      }
+      },
     })
   }
 }

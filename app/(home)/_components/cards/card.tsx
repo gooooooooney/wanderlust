@@ -11,18 +11,19 @@ import NextLink from "next/link";
 import { Link } from "@nextui-org/link";
 import { Chip } from "@nextui-org/chip";
 import { Skeleton } from "@nextui-org/skeleton";
-import { generateColor } from "@/lib/utils";
+import { cn, generateColor } from "@/lib/utils";
 
 type CardProps = {
-  vt: VirtualTourWithTags;
+  vt: (VirtualTour & {tags: Tag[]});
+  className?: string;
 };
 
-export const Card = ({ vt }: CardProps) => {
+export const Card = ({ vt,className }: CardProps) => {
   const date = format(vt.createdAt, "MMM dd, yyyy", {
     locale: enUS,
   });
   return (
-    <NextUiCard isHoverable>
+    <NextUiCard isHoverable shadow="lg" className={cn(className)}>
       <CardBody>
         <Link as={NextLink} color="foreground" href={`/virtual-tour/${vt.id}`}>
           <Image
@@ -48,7 +49,7 @@ export const Card = ({ vt }: CardProps) => {
             >
               {date}
             </time>
-            {vt.Tag.map((tag) => (
+            {vt.tags.map((tag) => (
               <Chip
                 className="h-5"
                 size="sm"
