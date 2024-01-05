@@ -1,7 +1,7 @@
 import EmblaCarousel from "@/components/carousel/embla-carousel";
 import { PageInfoService } from "@/services/pageInfo.service";
 import { UserService } from "@/services/user.service";
-import { Cards } from "./_components/cards";
+import { Cards } from "../../components/cards";
 import { Video } from "./_components/introduction/video";
 import { FadeIn, FadeInStagger } from "@/components/FadeIn";
 import { Container } from "@/components/Container";
@@ -27,11 +27,11 @@ export default async function Home() {
           />
           <Video />
         </FadeInStagger>
-        <Container>
+        {/* <Container> */}
           <FadeIn className="flex justify-center my-4">
             <Cards vts={vts || []} />
           </FadeIn>
-        </Container>
+        {/* </Container> */}
 
 
         {/* <FadeIn className="flex my-20 justify-center">

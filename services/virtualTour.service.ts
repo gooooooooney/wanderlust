@@ -10,12 +10,8 @@ export class VirtualTourService {
                 link: true,
                 coverSrc: true,
                 title: true,
-                tags: {
-                    select: {
-                        id: true,
-                        name: true
-                    }
-                },
+                description: true,
+                tags: true
                 // Tag: true,
             },
         });

@@ -11,7 +11,8 @@ import NextLink from "next/link";
 import { Link } from "@nextui-org/link";
 import { Chip } from "@nextui-org/chip";
 import { Skeleton } from "@nextui-org/skeleton";
-import { cn, generateColor } from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import { Tags } from "../tags";
 
 type CardProps = {
   vt: (VirtualTour & {tags: Tag[]});
@@ -49,28 +50,14 @@ export const Card = ({ vt,className }: CardProps) => {
             >
               {date}
             </time>
-            {vt.tags.map((tag) => (
-              <Chip
-                className="h-5"
-                size="sm"
-                style={{
-                  backgroundColor: generateColor(tag.name).backgroundColor,
-                }}
-                key={tag.id}
-                // href={`/category/${tag.id}`}
-              >
-                <NextLink key={tag.id} href={`/category/${tag.id}`}>
-                  {tag.name}
-                </NextLink>
-              </Chip>
-            ))}
+            <Tags tags={vt.tags} />
           </div>
           <div className="group relative">
             <h3 className="mt-5 text-lg font-semibold leading-6">
               <span className="absolute inset-0" />
               {vt.title}
             </h3>
-            <Text className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+            <Text className="mt-5 line-clamp-2 text-sm leading-6 text-gray-600">
               {vt.description}
             </Text>
           </div>
