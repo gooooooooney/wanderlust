@@ -4,15 +4,13 @@ import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import { Tag, VirtualTour } from "@prisma/client";
 import { Text } from "@/components/ui-kit/text";
-import { format } from "date-fns";
-import {enUS} from "date-fns/locale/en-US";
 import { VirtualTourWithTags } from "@/types";
 import NextLink from "next/link";
 import { Link } from "@nextui-org/link";
-import { Chip } from "@nextui-org/chip";
 import { Skeleton } from "@nextui-org/skeleton";
 import { cn } from "@/lib/utils";
 import { Tags } from "../tags";
+import { dateFormat } from "@/lib/date";
 
 type CardProps = {
   vt: (VirtualTour & {tags: Tag[]});
@@ -20,9 +18,7 @@ type CardProps = {
 };
 
 export const Card = ({ vt,className }: CardProps) => {
-  const date = format(vt.createdAt, "MMM dd, yyyy", {
-    locale: enUS,
-  });
+  const date = dateFormat(vt.createdAt);
   return (
     <NextUiCard isHoverable shadow="lg" className={cn(className)}>
       <CardBody>

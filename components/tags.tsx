@@ -5,7 +5,10 @@ import { Tag } from "@prisma/client";
 import { generateColor } from "@/lib/color";
 
 type TagsProps = {
-  tags: Tag[]
+  tags: {
+    id: string,
+    name: string
+  }[]
 };
 
 export const Tags = ({ tags }: TagsProps) => {

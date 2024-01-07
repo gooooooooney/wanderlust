@@ -15,7 +15,7 @@ const VideoSkeleton = () => {
   )
 }
 
-export const Video = () => {
+export const Video = ({source}:{source: string}) => {
   const isClient = useIsClient()
   if (!isClient) {
     return <VideoSkeleton />
@@ -23,7 +23,7 @@ export const Video = () => {
   return (
     <div className=' '>
       <ReactPlayer
-        url='https://global-public.realsee-cdn.com/release/vrsaas/file/signwork/tag/211be581-ab51-4b1e-350b-24d7fd27cf58.mp4'
+        url={source}
         className='react-player'
         playing
         controls

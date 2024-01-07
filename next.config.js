@@ -32,7 +32,22 @@ const nextConfig = {
               protocol: 'https',
               hostname: 'realsee.jp',
               port: ""
-          }
+          },
+          {
+              protocol: 'https',
+              hostname: 'www.notion.so',
+              port: ""
+          },
+          {
+            protocol: 'https',
+            hostname: 's3.us-west-2.amazonaws.com',
+            port: '',
+          },
+          {
+            protocol: 'https',
+            hostname: 'avatars.githubusercontent.com',
+            port: '',
+          },
       ],
       // domains: [
       //     'images.unsplash.com',

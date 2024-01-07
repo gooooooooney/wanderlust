@@ -5,7 +5,7 @@ import { Container } from "@/components/Container";
 import { Text } from "@/components/ui-kit/text";
 import { Tags } from "@/components/tags";
 import { cn } from "@/lib/utils";
-import { title, titleColors } from "@/components/primitives";
+import { title } from "@/components/primitives";
 
 type VirtualTourProps = {
   params: {
@@ -27,7 +27,15 @@ const VirtualTourPage = async ({ params }: VirtualTourProps) => {
           className={cn(
             title({
               size: "sm",
-              color: titleColors[(Math.random() * 7) | 0],
+              color: [
+                "violet",
+                "yellow",
+                "blue",
+                "cyan",
+                "green",
+                "pink",
+                "foreground",
+              ][(Math.random() * 7) | 0] as any,
             })
           )}
         >

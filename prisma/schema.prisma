@@ -37,6 +37,7 @@ model User {
   isTwoFactorEnabled    Boolean                @default(false)
   createdAt             DateTime               @default(now())
   updatedAt             DateTime               @updatedAt
+  videoSrc              String?
   accounts              Account[]
   pageInfo              PageInfo?
   routes                Route[]

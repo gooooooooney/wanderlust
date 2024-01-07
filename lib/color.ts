@@ -48,7 +48,7 @@ function rgbToHsl(r: number, g: number, b: number) {
     const g = parseInt(hex.substr(3, 2), 16);
     const b = parseInt(hex.substr(5, 2), 16);
     const [h, s, l] = rgbToHsl(r, g, b);
-    return l >= 50 ? "black" : "white";
+    return l >= 100 ? "black" : "white";
   }
   
   
