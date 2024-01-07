@@ -21,7 +21,7 @@ const navigation = [
     icon: TbWorld,
   },
   {
-    name: "Contact me:luonawang1992727@gmail.com",
+    name: "luonawang1992727@gmail.com",
     href: "mailto:luonawang1992727@gmail.com",
     icon: FaMailBulk,
   },
