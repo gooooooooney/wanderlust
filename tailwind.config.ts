@@ -1,7 +1,12 @@
 import {nextui} from '@nextui-org/theme'
+import typographyPlugin from '@tailwindcss/typography'
+import { type Config } from 'tailwindcss'
+import typographyStyles from './typography'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+
+
+
+export default {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,7 +15,8 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    typography: typographyStyles,
   },
   darkMode: "class",
-  plugins: [nextui()],
-}
+  plugins: [nextui(), typographyPlugin()],
+}  satisfies Config

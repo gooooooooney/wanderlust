@@ -35,17 +35,17 @@ export const Blog = ({ blog }: BlogProps) => {
         className="relative isolate flex flex-col gap-8 lg:flex-row"
       >
         <Image
-        //   as={NextImage}
-            // width={256}
-            // height={256}
-        //   fill
-        //   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          as={NextImage}
+          // width={256}
+          // height={256}
+          fill
+          //   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           src={getCoverUrl(blog.cover)}
           alt=""
           classNames={{
-            wrapper:  "relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square !max-w-none lg:w-64 lg:shrink-0",
+            wrapper: "relative aspect-[16/9] overflow-hidden sm:aspect-[2/1] lg:aspect-square !max-w-none lg:w-64 lg:shrink-0",
           }}
-          className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50   object-cover"
+          className="absolute inset-0  transform hover:scale-125 h-full w-full rounded-2xl bg-gray-50   object-cover "
         />
 
         <div>
@@ -53,11 +53,11 @@ export const Blog = ({ blog }: BlogProps) => {
             <time dateTime={blog.created_time} className="text-gray-500">
               {dateFormat(blog.created_time)}
             </time>
-            <Tags tags={getTags(properties.category)} />
+            <Tags hrefPrefix="/tag" tags={getTags(properties.category)} />
           </div>
           <div className="group relative max-w-xl">
             <h3 className={cn(title({ size: "xs" }))}>
-              <Link href={`/blog/${blog.id}`}>
+              <Link href={`/article/${blog.id}`}>
                 <span className="absolute inset-0" />
                 {getTitle(properties.title)}
               </Link>

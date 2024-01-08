@@ -47,7 +47,9 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen justify-between">
-            {children}
+            <main>
+              {children}
+            </main>
 
             <FadeIn>
               <Footer />

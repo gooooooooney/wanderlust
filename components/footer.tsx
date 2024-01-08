@@ -55,7 +55,7 @@ const navigation = [
 export default function Footer() {
   return (
     <footer>
-      <Container className="mb-16">
+      <Container className="  mb-16">
         <Divider orientation="horizontal" className="my-10 md:my-20" />
         <div className="flex flex-col md:flex-row justify-between">
           <div className="flex justify-center space-x-6 md:order-2">

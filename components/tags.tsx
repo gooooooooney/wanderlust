@@ -8,10 +8,11 @@ type TagsProps = {
   tags: {
     id: string,
     name: string
-  }[]
+  }[],
+  hrefPrefix?: string
 };
 
-export const Tags = ({ tags }: TagsProps) => {
+export const Tags = ({ tags, hrefPrefix }: TagsProps) => {
   return (
     <>
       {tags.map((tag) => (
@@ -24,7 +25,7 @@ export const Tags = ({ tags }: TagsProps) => {
             color: generateColor(tag.name).color,
           }}
           key={tag.id}
-          href={`/category/${tag.id}`}
+          href={`${hrefPrefix || "/category" }/${tag.id}`}
         >
           {tag.name}
         </Chip>

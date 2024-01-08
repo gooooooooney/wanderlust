@@ -11,8 +11,8 @@ export type BlogProps = {
 export const BlogList = ({ blogs }: BlogProps) => {
   return (
     <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:max-w-4xl">
+      <div className="mx-auto  px-6 lg:px-8">
+        <div className="mx-auto">
           <FadeIn>
             <h2 className={cn(title({ size: "sm" }))}>Story</h2>
             <p className="mt-2 text-lg leading-8 text-zinc-500 dark:text-zinc-400">

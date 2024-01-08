@@ -12,6 +12,7 @@ export class UserService {
       select: {
         name: true,
         image: true,
+        email: true,
         videoSrc: true,
         pageInfo: {
           select: {

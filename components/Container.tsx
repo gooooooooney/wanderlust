@@ -1,24 +1,39 @@
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
+import { forwardRef } from 'react'
 
-type ContainerProps<T extends React.ElementType> = {
-  as?: T
-  className?: string
-  children: React.ReactNode
-}
-
-export function Container<T extends React.ElementType = 'div'>({
-  as,
-  className,
-  children,
-}: Omit<React.ComponentPropsWithoutRef<T>, keyof ContainerProps<T>> &
-  ContainerProps<T>) {
-  let Component = as ?? 'div'
-
+export const ContainerOuter = forwardRef<
+  React.ElementRef<'div'>,
+  React.ComponentPropsWithoutRef<'div'>
+>(function OuterContainer({ className, children, ...props }, ref) {
   return (
-    <Component className={cn('mx-auto max-w-[90rem] px-6 lg:px-8', className)}>
-      <div className="mx-auto max-w-2xl lg:max-w-none">
-        {children}
-        </div>
-    </Component>
+    <div ref={ref} className={cn('sm:px-8', className)} {...props}>
+      <div className="mx-auto w-full max-w-[90rem] lg:px-8">{children}</div>
+    </div>
   )
-}
+})
+
+export const ContainerInner = forwardRef<
+  React.ElementRef<'div'>,
+  React.ComponentPropsWithoutRef<'div'>
+>(function InnerContainer({ className, children, ...props }, ref) {
+  return (
+    <div
+      ref={ref}
+      className={cn('relative px-4 sm:px-8 lg:px-12', className)}
+      {...props}
+    >
+      <div className="mx-auto max-w-2xl lg:max-w-6xl">{children}</div>
+    </div>
+  )
+})
+
+export const Container = forwardRef<
+  React.ElementRef<typeof ContainerOuter>,
+  React.ComponentPropsWithoutRef<typeof ContainerOuter>
+>(function Container({ children, ...props }, ref) {
+  return (
+    <ContainerOuter ref={ref} {...props}>
+      <ContainerInner>{children}</ContainerInner>
+    </ContainerOuter>
+  )
+})
