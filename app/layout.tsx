@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
 import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
+import { ThemeSwitch } from "@/components/theme-switch";
 
 export const metadata: Metadata = {
   title: {
@@ -47,6 +48,9 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen justify-between">
+            <header className="fixed top-1/2 right-5 z-50" >
+              <ThemeSwitch />
+            </header>
             <main>
               {children}
             </main>

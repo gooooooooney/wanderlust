@@ -14,8 +14,6 @@ const Layout = async ({
 }) => {
   const { id } = params;
   const page = await NotionService.getPage(id) as PageObjectResponse;
-  const properties = page.properties
-  console.log(JSON.stringify(page))
 
   return (
     <ArticleLayout 

@@ -12,7 +12,11 @@ import {
   getTitle,
 } from "@/lib/notion/guard/properties-guard";
 import { cn } from '@/lib/utils'
-import {title} from '@/components/primitives'
+import { title } from '@/components/primitives'
+import NextImage from "next/image";
+import { Image } from "@nextui-org/image";
+import { getCoverUrl } from '@/lib/notion/guard/cover-guard'
+import "./article-layout.css"
 
 type ArticleProps = {
   page: PageObjectResponse
@@ -27,11 +31,26 @@ export const ArticleLayout = ({
   const name = getTitle(properties.title)
 
   return (
-    <Container className="mt-16 lg:mt-32">
-      <div className="xl:relative">
-        <div className="mx-auto w-full">
+    <div>
+      <Image
+        as={NextImage}
+        // width={256}
+        // height={256}
+        fill
+        //   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        src={getCoverUrl(page.cover)}
+        alt=""
+        radius='none'
+        classNames={{
+          wrapper: "relative overflow-hidden !max-w-none w-full h-80 ",
+        }}
+        className="absolute inset-0 diagonal-object-position rounded-b-sm object-cover "
+      />
+      <Container className="mt-8 lg:mt-10">
+        <div className="xl:relative">
+          <div className="mx-auto w-full">
 
-          {/* <button
+            {/* <button
             type="button"
             onClick={() => router.back()}
             aria-label="Go back to articles"
@@ -40,37 +59,38 @@ export const ArticleLayout = ({
             <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
           </button> */}
 
-          <article>
-            <header className="flex flex-col gap-y-6">
-              <h1 className={cn("tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl", title({size: "sm"}))}>
-                {name}
-              </h1>
-              <time
-                dateTime={dateFormat(page.created_time)}
-                className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
-              >
-                <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
-                <span className="ml-3">{dateFormat(page.created_time, "EEEE, MMM dd, yyyy")}</span>
-              </time>
-              <div >
-                <User
-                  name={getPlainText(properties.author)}
-                  avatarProps={{
-                    // color: "warning",
-                    name: getPlainText(properties.author),
-                    src: getFiles(properties.author_avatar)[0] || ""
-                  }}
-                  description={getSelect(properties.author_title)?.name}
+            <article>
+              <header className="flex flex-col gap-y-6">
+                <h1 className={cn("tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl", title({ size: "sm" }))}>
+                  {name}
+                </h1>
+                <time
+                  dateTime={dateFormat(page.created_time)}
+                  className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
+                >
+                  <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
+                  <span className="ml-3">{dateFormat(page.created_time, "EEEE, MMM dd, yyyy")}</span>
+                </time>
+                <div >
+                  <User
+                    name={getPlainText(properties.author)}
+                    avatarProps={{
+                      // color: "warning",
+                      name: getPlainText(properties.author),
+                      src: getFiles(properties.author_avatar)[0] || ""
+                    }}
+                    description={getSelect(properties.author_title)?.name}
 
-                />
-              </div>
-            </header>
-            <Prose className="mt-8" data-mdx-content>
-              {children}
-            </Prose>
-          </article>
+                  />
+                </div>
+              </header>
+              <Prose className="mt-8" data-mdx-content>
+                {children}
+              </Prose>
+            </article>
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   )
 }

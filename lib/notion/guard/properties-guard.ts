@@ -7,7 +7,6 @@ import {
   isSelectProperty,
   isTitleProperty,
 } from "./is";
-import { getCoverUrl } from "./cover-guard";
 
 export const getTitle = (title: Properties) => {
   if (isTitleProperty(title)) {

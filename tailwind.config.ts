@@ -11,7 +11,25 @@ export default {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        'size-inherit': "inherit",
+      },
+      keyframes: {
+        imageDiagonalSlide: {
+          from: {
+            transform: "translateX(0) translateY(0);"
+          },
+          to: {
+            transform: "translateX(100%) translateY(100%);"
+          }
+        } 
+
+      },
+      animation: {
+        "image-diagonal-slide": "imageDiagonalSlide 40s linear infinite",
+      },
+    },
     typography: typographyStyles,
   },
   darkMode: "class",
@@ -23,7 +41,7 @@ export default {
             
           },
           colors: {
-            
+            background: "#FFFDF9" //"#F9F5F6" //"#FFFBF5"
           },
         },
         dark: {
