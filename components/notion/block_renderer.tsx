@@ -5,9 +5,9 @@ import { Text } from './text'
 import Callout from './callout'
 import Quote from './quote'
 import { BulletedList } from './bulleted-list'
-import { NotionService } from '@/services/notion.service'
 import { NumberedList } from './numbered-list'
 import { Code } from './code'
+import { RenderImage } from './render-image/image'
 
 type BlockRendererProps = {
   block: BlockObjectResponse
@@ -40,7 +40,7 @@ export const BlockRenderer = ({ block, nestedLevel }: BlockRendererProps) => {
     case BLOCK_TYPES.EMBED:
       return <div>embed</div>
     case BLOCK_TYPES.IMAGE:
-      return <div>image</div>
+      return <RenderImage block={block} />
     case BLOCK_TYPES.VIDEO:
       return <div>video</div>
     case BLOCK_TYPES.FILE:

@@ -48,6 +48,11 @@ const nextConfig = {
             hostname: 'avatars.githubusercontent.com',
             port: '',
           },
+          {
+            protocol: 'https',
+            hostname: 'global-static.realsee-cdn.com',
+            port: '',
+          },
       ],
       // domains: [
       //     'images.unsplash.com',

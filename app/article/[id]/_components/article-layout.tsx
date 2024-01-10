@@ -84,7 +84,7 @@ export const ArticleLayout = ({
                   />
                 </div>
               </header>
-              <Prose className="mt-8" data-mdx-content>
+              <Prose className="mt-8 " data-mdx-content>
                 {children}
               </Prose>
             </article>

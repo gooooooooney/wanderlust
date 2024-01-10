@@ -1,6 +1,10 @@
-import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { ImageBlockObjectResponse, PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { IMAGE_TYPE } from "../types";
 
 export type Properties = PageObjectResponse["properties"][string];
+
+type Image = ImageBlockObjectResponse["image"];
+
 
 export function isTitleProperty(title: Properties): title is Extract<Properties, { type: "title" }> {
   return title.type === "title";
@@ -100,4 +104,13 @@ function isExternal(external: PageObjectResponse["cover"]) {
 
 export function isParentPageType(parent?: PageObjectResponse["parent"]): parent is Extract<PageObjectResponse["parent"], { type: "page_id" }> {
   return parent?.type === "page_id"
+}
+
+
+export function isImageExternal(img: Image): img is Extract<Image, { type: "external" }>{
+  return img.type === IMAGE_TYPE.EXTERNAL;
+}
+
+export function isImageFile(file: Image): file is Extract<Image, { type: "file" }>{
+  return file.type === IMAGE_TYPE.EXTERNAL;
 }
