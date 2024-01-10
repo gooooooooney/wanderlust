@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import { Prose } from '@/components/Prose'
+import { Prose } from '@/components/notion/prose/Prose'
 import { dateFormat } from '@/lib/date'
 import { User } from '@nextui-org/user'
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'

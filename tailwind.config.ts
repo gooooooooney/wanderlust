@@ -30,7 +30,7 @@ export default {
         "image-diagonal-slide": "imageDiagonalSlide 40s linear infinite",
       },
     },
-    typography: typographyStyles,
+    // typography: typographyStyles,
   },
   darkMode: "class",
   plugins: [

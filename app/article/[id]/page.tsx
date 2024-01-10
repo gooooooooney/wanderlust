@@ -1,4 +1,5 @@
-import { NotionRender } from '@/components/notion/notion-render';
+
+import { BlocksContainer } from '@/components/notion/blocks-container';
 import { NotionService } from '@/services/notion.service';
 import React from 'react'
 
@@ -12,11 +13,10 @@ const BlogPage = async ({params}: BlogPageProps) => {
   const { id } = params;
   const blocks = await NotionService.getBlocks(id);
   console.log("---------")
-  console.log(JSON.stringify(blocks))
 
   return (
     <>
-    <NotionRender blocks={blocks} />
+    <BlocksContainer initialBlocks={blocks} />
     </>
   )
 }

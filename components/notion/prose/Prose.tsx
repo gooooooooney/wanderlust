@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import "./prose.css"
 
 export function Prose({
   className,
