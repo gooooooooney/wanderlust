@@ -1,5 +1,5 @@
 import { ImageBlockObjectResponse, PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { isImageExternal, isImageFile, isParentPageType } from "./is";
+import { ExternalOfFile, isExternal, isFile, isParentPageType } from "./is";
 
 export function getParentPage(parent: PageObjectResponse["parent"]) {
     if (isParentPageType(parent)) {
@@ -8,11 +8,11 @@ export function getParentPage(parent: PageObjectResponse["parent"]) {
     return null;
 }
 
-export function getImageUrl(image: ImageBlockObjectResponse) {
-    if (isImageExternal(image.image)) {
-        return image.image.external.url;
-    } else if (isImageFile(image.image)) {
-        return image.image.file.url;
+export function getMediaUrl(media: ExternalOfFile) {
+    if (isExternal(media)) {
+        return media.external.url;
+    } else if (isFile(media)) {
+        return media.file.url;
     }
     return ""
 }

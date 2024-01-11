@@ -23,7 +23,7 @@ export const colorMaps: Record<ParagraphBlockObjectResponse['paragraph']['color'
   purple: 'text-[#9065b0]',
   pink: 'text-[#c14c8a]',
   red: 'text-[#d44c47]',
-  'gray_background': 'bg-[#f1f1ef] dark:bg-[#252525]',
+  'gray_background': 'bg-[#f1f1ef] dark:bg-[#222831]',
   'brown_background': 'bg-[#f4eeee] dark:bg-[#2f2723]',
   'orange_background': 'bg-[#fbecdd] dark:bg-[#38281e]',
   'yellow_background': 'bg-[#fbf3db] dark:bg-[#392e1e]',

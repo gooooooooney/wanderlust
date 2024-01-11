@@ -2,7 +2,7 @@ import EmblaCarousel from "@/components/carousel/embla-carousel";
 import { PageInfoService } from "@/services/pageInfo.service";
 import { UserService } from "@/services/user.service";
 import { Cards } from "../../components/cards";
-import { Video } from "./_components/introduction/video";
+import { Video } from "../../components/video/video";
 import { FadeIn, FadeInStagger } from "@/components/FadeIn";
 import { Container } from "@/components/Container";
 import { UserInfo } from "./_components/introduction/userinfo";
