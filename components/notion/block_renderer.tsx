@@ -11,6 +11,7 @@ import { RenderImage } from './render-image/image'
 import { Video } from '../video/video'
 import { getMediaUrl } from '@/lib/notion/guard/block-guard'
 import { FadeIn } from '../FadeIn'
+import { Divider } from '@nextui-org/divider'
 
 type BlockRendererProps = {
   block: BlockObjectResponse
@@ -64,7 +65,7 @@ export const BlockRenderer = ({ block, nestedLevel }: BlockRendererProps) => {
             case BLOCK_TYPES.CALLOUT:
               return <Callout block={block} />
             case BLOCK_TYPES.DIVIDER:
-              return <div>divider</div>
+              return <hr/>
             case BLOCK_TYPES.TABLE_OF_CONTENTS:
               return <div>table of contents</div>
             case BLOCK_TYPES.BREADCRUMB:
