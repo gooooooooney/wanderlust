@@ -7,6 +7,7 @@ import {
   getFiles,
   getPlainText,
   getSelect,
+  getTags,
   getTitle,
 } from "@/lib/notion/guard/properties-guard";
 import NextImage from "next/image";
@@ -49,6 +50,7 @@ export const ArticleLayout = ({
 
         <article className='flex flex-col justify-center items-center'>
           <ArticleHeader
+          tags={getTags(properties.category)}
             titleName={name}
             time={dateFormat(page.created_time, "EEEE, MMM dd, yyyy")}
             userAvatar={getFiles(properties.author_avatar)[0] || ""}
