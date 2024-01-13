@@ -5,10 +5,8 @@ import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
-import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: {
