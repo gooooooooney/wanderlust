@@ -53,6 +53,11 @@ const nextConfig = {
             hostname: 'global-static.realsee-cdn.com',
             port: '',
           },
+          {
+            protocol: 'https',
+            hostname: 'res.insta360.com',
+            port: '',
+          },
       ],
   },
 }
