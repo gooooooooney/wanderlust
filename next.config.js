@@ -54,12 +54,6 @@ const nextConfig = {
             port: '',
           },
       ],
-      // domains: [
-      //     'images.unsplash.com',
-      //     "utfs.io",
-      //     "pic.superbed.cc",
-      //     "pic.imgdb.cn",
-      // ],
   },
 }
 

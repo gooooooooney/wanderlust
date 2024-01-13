@@ -12,7 +12,6 @@ type BlogPageProps = {
 const BlogPage = async ({params}: BlogPageProps) => {
   const { id } = params;
   const blocks = await NotionService.getBlocks(id);
-  console.log("---------")
 
   return (
     <>
