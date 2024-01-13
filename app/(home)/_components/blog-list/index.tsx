@@ -6,15 +6,16 @@ import { FadeIn } from "@/components/FadeIn";
 
 export type BlogProps = {
   blogs: PageObjectResponse[];
+  titleName?: string;
 };
 
-export const BlogList = ({ blogs }: BlogProps) => {
+export const BlogList = ({ blogs, titleName = "Story" }: BlogProps) => {
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto  px-6 lg:px-8">
         <div className="mx-auto">
           <FadeIn>
-            <h2 className={cn(title({ size: "sm" }))}>Story</h2>
+            <h2 className={cn(title({ size: "sm" }))}>{titleName}</h2>
             <p className="mt-2 text-lg leading-8 text-zinc-500 dark:text-zinc-400">
               Explore the virtual tour stories.
             </p>

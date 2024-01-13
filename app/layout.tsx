@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import { ThemeSwitch } from "@/components/theme-switch";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: {
@@ -47,17 +48,17 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen justify-between">
-            <header className="fixed top-1/2 right-5 z-50" >
+          <div className="relative h-screen">
+            <header className="top-2 opacity-50 sm:opacity-100 fixed sm:top-auto sm:bottom-[10%] sm:right-10 right-5 z-50">
               <ThemeSwitch />
             </header>
-            <main>
-              {children}
-            </main>
+            <div className="flex flex-col  justify-between">
+              <main>{children}</main>
 
-            <FadeIn>
-              <Footer />
-            </FadeIn>
+              <FadeIn>
+                <Footer />
+              </FadeIn>
+            </div>
           </div>
         </Providers>
       </body>
