@@ -8,11 +8,11 @@ export class PageInfoService {
         userId: USER_ID,
       },
       select: {
-        Banner: true
+        banner: true
       }
     })
     return {
-      banners: pageInfo?.Banner || []
+      banners: pageInfo?.banner || []
     }
   }
 }
