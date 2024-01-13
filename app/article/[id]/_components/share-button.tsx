@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   EmailIcon,
   EmailShareButton,
@@ -53,49 +53,51 @@ import {
   XIcon,
 } from "react-share";
 
-import React from 'react'
-
+import React from "react";
+import { Tooltip } from "@nextui-org/tooltip";
 
 type ShareButtonProps = {
   title?: string;
-}
+};
 
 export const ShareButton = ({ title }: ShareButtonProps) => {
   return (
     <div className="grid grid-cols-6 gap-4">
-      <FacebookShareButton
-        url={window.location.href}
-      >
-        <FacebookIcon size={32} round />
-      </FacebookShareButton>
-      <TwitterShareButton
-        url={window.location.href}
-        title={title}
-      >
-        <XIcon size={32} round />
-      </TwitterShareButton>
+      <Tooltip content="Facebook">
+        <FacebookShareButton url={window.location.href}>
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
+      </Tooltip>
+      <Tooltip content="X">
+        <TwitterShareButton url={window.location.href} title={title}>
+          <XIcon size={32} round />
+        </TwitterShareButton>
+      </Tooltip>
+      <Tooltip content="Whatsapp">
+        <WhatsappShareButton
+          url={window.location.href}
+          title={title}
+          separator=":: "
+        >
+          <WhatsappIcon size={32} round />
+        </WhatsappShareButton>
+      </Tooltip>
 
-      <WhatsappShareButton
-        url={window.location.href}
-        title={title}
-        separator=":: "
-      >
-        <WhatsappIcon size={32} round />
-      </WhatsappShareButton>
-      <LinkedinShareButton
-        url={window.location.href}
-      >
-        <LinkedinIcon size={32} round />
-      </LinkedinShareButton>
-
-      <RedditShareButton
-        url={window.location.href}
-        title={title}
-        windowWidth={660}
-        windowHeight={460}
-      >
-        <RedditIcon size={32} round />
-      </RedditShareButton>
+      <Tooltip content="Linkedin">
+        <LinkedinShareButton url={window.location.href}>
+          <LinkedinIcon size={32} round />
+        </LinkedinShareButton>
+      </Tooltip>
+      <Tooltip content="Reddit">
+        <RedditShareButton
+          url={window.location.href}
+          title={title}
+          windowWidth={660}
+          windowHeight={460}
+        >
+          <RedditIcon size={32} round />
+        </RedditShareButton>
+      </Tooltip>
     </div>
-  )
-}
+  );
+};
