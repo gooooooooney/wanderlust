@@ -61,6 +61,9 @@ type ShareButtonProps = {
 };
 
 export const ShareButton = ({ title }: ShareButtonProps) => {
+  if (window === undefined) {
+    return null;
+  }
   return (
     <div className="grid grid-cols-6 gap-4">
       <Tooltip content="Facebook">

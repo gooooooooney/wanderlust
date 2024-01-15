@@ -41,7 +41,7 @@ export const ArticleHeader = ({
       <div className='flex gap-x-2'>
         <Tags hrefPrefix="/tag" tags={tags} />
       </div>
-      <div className='flex justify-between items-center'>
+      <div className='flex flex-col gap-y-4 items-start sm:flex-row  sm:justify-between sm:items-center'>
         <User
           name={userName}
           avatarProps={{
