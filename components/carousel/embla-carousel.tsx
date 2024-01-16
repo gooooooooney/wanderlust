@@ -16,6 +16,7 @@ import {
 import "./base.css"
 import "./embla.css"
 import { Banner } from '@prisma/client'
+import Link from 'next/link'
 
 type EmblaCarousel = typeof useEmblaCarousel
 
@@ -69,11 +70,12 @@ const EmblaCarousel: React.FC<CarouselBannersProps> = (props) => {
                 {/* <div className="embla__slide__number">
                   <span>{index + 1}</span>
                 </div> */}
-                <img
-                  className="h-80 lg:h-[40rem] w-full object-cover block"
-                  src={banner.imageSrc}
-                  alt="Your alt text"
-                />
+                <Link href={banner.imageUrl}>
+                  <img
+                    className="h-80 lg:h-[40rem] w-full object-cover block"
+                    src={banner.imageSrc}
+                    alt="Your alt text"
+                  /></Link>
               </div>
             ))}
           </div>
