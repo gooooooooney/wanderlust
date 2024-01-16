@@ -27,7 +27,9 @@ export const RichText = ({ richTexts, className, as }: RichTextProps) => {
           return richText.text.link ? (
             <Link
               as={NextLink}
+              isExternal
               underline="hover"
+              showAnchorIcon
               className="!text-size-inherit no-underline"
               color="warning"
               key={index}

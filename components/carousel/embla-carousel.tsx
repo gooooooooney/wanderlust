@@ -66,9 +66,9 @@ const EmblaCarousel: React.FC<CarouselBannersProps> = (props) => {
           <div className="embla__container">
             {props.banners.map((banner, index) => (
               <div className="embla__slide" key={banner.id}>
-                <div className="embla__slide__number">
+                {/* <div className="embla__slide__number">
                   <span>{index + 1}</span>
-                </div>
+                </div> */}
                 <img
                   className="h-80 lg:h-[40rem] w-full object-cover block"
                   src={banner.imageSrc}

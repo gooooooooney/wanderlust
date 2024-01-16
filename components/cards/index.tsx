@@ -14,15 +14,13 @@ type CardsProps = {
 };
 
 export const Cards = ({ vts, className }: CardsProps) => {
-  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  const rotations = ['sm:rotate-2', 'sm:-rotate-2', 'sm:rotate-2', 'sm:rotate-2', 'sm:-rotate-2']
 
   return (
 
     <FadeInStagger faster className={cn("grid grid-cols-1 lg:grid-cols-4 gap-6 w-full ", className)}>
       {vts.map((vt, i) => (
-        <FadeIn key={vt.id}>
-          <Card vt={vt} className={rotations[i % rotations.length]} />
-        </FadeIn>
+        <Card key={vt.id} vt={vt} className={rotations[i % rotations.length]} />
       ))}
     </FadeInStagger>
 

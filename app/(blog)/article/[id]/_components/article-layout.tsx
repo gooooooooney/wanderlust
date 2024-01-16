@@ -15,6 +15,7 @@ import { Image } from "@nextui-org/image";
 import { getCoverUrl } from "@/lib/notion/guard/cover-guard";
 import "./article-layout.css";
 import { ArticleHeader } from "./header";
+import { Fire } from "@/components/fire";
 
 type ArticleProps = {
   page: PageObjectResponse;
@@ -56,6 +57,9 @@ export const ArticleLayout = ({ page, children }: ArticleProps) => {
             {children}
           </Prose>
         </article>
+        <div className="text-center py-16 sm:pt-32 sm:pb-auto">
+          <Fire />
+        </div>
       </Container>
     </div>
   );

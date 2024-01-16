@@ -11,60 +11,65 @@ import { Skeleton } from "@nextui-org/skeleton";
 import { cn } from "@/lib/utils";
 import { Tags } from "../tags";
 import { dateFormat } from "@/lib/date";
+import { FadeIn } from "../FadeIn";
 
 type CardProps = {
-  vt: (VirtualTour & {tags: Tag[]});
+  vt: (VirtualTour & { tags: Tag[] });
   className?: string;
 };
 
-export const Card = ({ vt,className }: CardProps) => {
+export const Card = ({ vt, className }: CardProps) => {
   const date = dateFormat(vt.createdAt);
   return (
-    <NextUiCard isHoverable shadow="lg" className={cn(className)}>
-      <CardBody>
-        <Link as={NextLink} color="foreground" href={`/virtual-tour/${vt.id}`}>
-          <Image
-            shadow="sm"
-            radius="sm"
-            src={vt.coverSrc || ""}
-            fallbackSrc="https://via.placeholder.com/300x200"
-            as={NextImage}
-            width={300}
-            height={200}
-            isZoomed
-            isBlurred
-            alt=""
-          />
-        </Link>
-      </CardBody>
-      <CardFooter>
-        <section className="flex flex-col ">
-          <div className=" flex items-center gap-x-2 text-xs">
-            <time
-              dateTime={date}
-              className="text-gray-500"
-            >
-              {date}
-            </time>
-            <Tags tags={vt.tags} />
-          </div>
-          <div className="group relative">
-            <h3 className="mt-5 text-lg font-semibold leading-6">
-              <span className="absolute inset-0" />
-              {vt.title}
-            </h3>
-            <Text className="mt-5 line-clamp-2 text-sm leading-6 text-gray-600">
-              {vt.description}
-            </Text>
-          </div>
-          {/* <div className="text-lg font-semibold mt-4">{vt.title}</div>
+    <FadeIn >
+
+      <NextUiCard isHoverable shadow="lg" className={cn(className)}>
+        <CardBody>
+          <Link as={NextLink} color="foreground" href={`/virtual-tour/${vt.id}`}>
+            <Image
+              shadow="sm"
+              radius="sm"
+              src={vt.coverSrc || ""}
+              fallbackSrc="https://via.placeholder.com/300x200"
+              as={NextImage}
+              width={300}
+              height={200}
+              isZoomed
+              isBlurred
+              alt=""
+            />
+          </Link>
+        </CardBody>
+        <CardFooter>
+          <section className="flex flex-col ">
+            <div className=" flex items-center gap-x-2 text-xs">
+              <time
+                dateTime={date}
+                className="text-gray-500"
+              >
+                {date}
+              </time>
+              <Tags tags={vt.tags} />
+            </div>
+            <div className="group relative">
+              <h3 className="mt-5 text-lg font-semibold leading-6">
+                <span className="absolute inset-0" />
+                {vt.title}
+              </h3>
+              <Text className="mt-5 line-clamp-2 text-sm leading-6 text-gray-600">
+                {vt.description}
+              </Text>
+            </div>
+            {/* <div className="text-lg font-semibold mt-4">{vt.title}</div>
           <Text className="max-w-3xl text-left leading-7 [&:not(:first-child)]:mt-2">
             {vt.description}
           </Text> */}
-        </section>
-      </CardFooter>
-    </NextUiCard>
+          </section>
+        </CardFooter>
+      </NextUiCard>
+    </FadeIn>
   );
+
 };
 
 export const CardSkeleton = () => {
@@ -85,6 +90,7 @@ export const CardSkeleton = () => {
         </Skeleton>
       </div>
     </NextUiCard>
+
   );
 };
 

@@ -53,9 +53,9 @@ export default function RootLayout({
             <div className="flex flex-col  justify-between">
               <main>{children}</main>
 
-              <FadeIn>
-                <Footer />
-              </FadeIn>
+              {/* <FadeIn> */}
+              <Footer />
+              {/* </FadeIn> */}
             </div>
           </div>
         </Providers>

@@ -23,11 +23,23 @@ export default {
           to: {
             transform: "translateX(100%) translateY(100%);"
           }
-        } 
+        },
+        swing:{
+          "0%": { transform: "rotate(0deg)" },
+          "10%": { transform: "rotate(10deg)" },
+          "30%": { transform: "rotate(0deg)" },
+          "40%": { transform: "rotate(-10deg)" },
+          "50%": { transform: "rotate(0deg)" },
+          "60%": { transform: "rotate(5deg)" },
+          "70%": { transform: "rotate(0deg)" },
+          "80%": { transform: "rotate(-5deg)" },
+          "100%": { transform: "rotate(0deg)" }        
+        }
 
       },
       animation: {
         "image-diagonal-slide": "imageDiagonalSlide 40s linear infinite",
+        swing: "swing 2s ease-in-out infinite",
       },
     },
     // typography: typographyStyles,
