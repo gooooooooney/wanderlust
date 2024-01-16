@@ -53,14 +53,15 @@ export default {
             
           },
           colors: {
-            background: "#FFFDF9" //"#F9F5F6" //"#FFFBF5"
+            background: "#FFFDF9", //"#F9F5F6" //"#FFFBF5"
           },
         },
         dark: {
           layout: {}, 
           colors: {
             background: "rgb(15, 23, 42)",
-            // content1: "rgb(15, 23, 42)",
+            content1: "#222831",
+            content2: "#092635",
           }, 
         },
       },
